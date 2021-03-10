@@ -1,0 +1,41 @@
+version: "3.8"
+services:
+
+  db:
+    image: postgres
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=postgres_user_city
+      - POSTGRES_PASSWORD=super_password
+      - POSTGRES_DB=cities
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    networks:
+      - postgres-network
+    ports:
+      - "5432:5432"
+    restart: always
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=cities
+      - PGADMIN_DEFAULT_PASSWORD=cities
+    ports:
+      - "8081:80"
+    volumes:
+      - pgadmin:/root/.pgadmin
+    depends_on: 
+      - db
+    networks:
+      - postgres-network
+    restart: unless-stopped
+
+networks:
+  postgres-network:
+    driver: bridge
+
+volumes:
+  postgres:
+  pgadmin:
