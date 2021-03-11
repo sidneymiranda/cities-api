@@ -1,8 +1,7 @@
 package com.github.sidneymiranda.citiesapi.services;
 
-
 import com.github.sidneymiranda.citiesapi.entities.Country;
-import com.github.sidneymiranda.citiesapi.repositories.CountryRepository;
+import com.github.sidneymiranda.citiesapi.repository.CountryRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -22,7 +21,7 @@ public class CountryService {
         return repository.findAll(pageable);
     }
 
-    public ResponseEntity<Object> getOne(Long id){
+    public ResponseEntity<Country> getOne(Long id){
         Optional<Country> optional = repository.findById(id);
         if(optional.isPresent()){
             return ResponseEntity.ok().body(optional.get());

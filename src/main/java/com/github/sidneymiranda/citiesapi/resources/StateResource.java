@@ -1,11 +1,9 @@
 package com.github.sidneymiranda.citiesapi.resources;
 
-import com.github.sidneymiranda.citiesapi.entities.Country;
-import com.github.sidneymiranda.citiesapi.services.CountryService;
+import com.github.sidneymiranda.citiesapi.entities.State;
+import com.github.sidneymiranda.citiesapi.services.StateService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,21 +12,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("api/v1/countries")
-@AllArgsConstructor(onConstructor_ = {@Autowired})
-public class CountryResource {
+import java.util.List;
 
-    private final CountryService service;
+@RestController
+@RequestMapping("api/v1/states")
+@AllArgsConstructor(onConstructor_ = {@Autowired})
+public class StateResource {
+
+    private final StateService service;
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public Page<Country> countryList(Pageable pageable){
-        return service.findAll(pageable);
+    public List<State> countryList(){
+        return service.findAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Country> getCountryById(@PathVariable Long id) {
+    public ResponseEntity<State> getCountryById(@PathVariable Long id) {
         return service.getOne(id);
     }
 }
