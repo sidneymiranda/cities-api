@@ -36,6 +36,6 @@
 
 ### To access the postgres, run:
          
-         docker exec -it cities-db /bin/bash
+         docker exec -it postgres /bin/bash
 
          psql -h localhost -U postgres_user_city cities
