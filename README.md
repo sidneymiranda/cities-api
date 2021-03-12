@@ -1,41 +1,43 @@
 # Cities API
 
-## Database configuration
+<hr>
 
-<hr/>
+## Descripition
 
-## Postgres
+This project is about a REST API developed during the Java Developer bootcamp of Digital Innovation One. In it, some endpoints were implemented, such as: the consultation of countries and more specifically in Brazil, which is possible:
 
-### At the root of the project, run:
-     
-         docker-compose up -d
+- Consult the states
+- Consult the cities
+- Check the distance between two cities
+    - In Km
+    - In Miles
+    
 
 
-### Populate the database
-   
-   Clone the project:
-   
-         git clone https://github.com/chinnonsantos/sql-paises-estados-cidades.git
-      
-   Enter in folder
-   
-         cd sql-paises-estados-cidades/PostgreSQL
-   
-   Map the volume to the container: 
-   
-      docker run -it --rm --net=host -v ${PWD}:/tmp postgres /bin/bash
-       
-   Copy the scripts into the container:    
-        
-      psql -h localhost -U postgres_user_city cities -f /tmp/pais.sql
-      psql -h localhost -U postgres_user_city cities -f /tmp/estado.sql
-      psql -h localhost -U postgres_user_city cities -f /tmp/cidade.sql
+## Tools and technologies used
+- IntellijIDEA
+- Postman
+- Java 8
+- Spring Boot
+- Spring Data JPA
+- PostgreSQL
+- Heroku
+- Project Lombok
+- Hibernate Types Library
 
-      CREATE EXTENSION cube;
-      CREATE EXTENSION earthdistance;
 
-### To access the postgres, run:
-         
-         docker exec -it postgres /bin/bash
+## Learning
 
-         psql -h localhost -U postgres_user_city cities
+I matured a little more about the use of Spring Boot.
+I was able to work with pagination very easily using the Spring Framework
+Handling the Java 8 Stream API
+Layered design architecture
+- Entity
+- Resource
+- Repository
+- Service
+
+## Challenge
+
+- I intend to implement new features for the API, such as calculating the distance between neighborhoods in a city, for example (just an idea).
+- A new project as an application that consumes this API.
