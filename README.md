@@ -4,13 +4,28 @@
 
 ## Descripition
 
-This project is about a REST API developed during the Java Developer bootcamp of Digital Innovation One. In it, some endpoints were implemented, such as: the consultation of countries and more specifically in Brazil, which is possible:
+This project is about a REST API developed during the Java Developer bootcamp of Digital Innovation One. 
+In it, I provide some endpoints like:
 
-- Consult the states
-- Consult the cities
-- Check the distance between two cities
-    - In Km
-    - In Miles
+- List of countries
+- List of Brazilian states
+- List of Brazilian cities
+- Calculation of the distance between two Brazilian cities given in:
+  - In meters (/ per cube)
+  - In miles (/ per points)
+
+The results of the listing are prepared for pagination, just passing the parameters correctly.
+
+Endpoints:
+
+- GET / api / v1 / states
+- GET / api / v1 / states / {id}
+- GET / api / v1 / cities
+- GET / api / v1 / cities / {id}
+- GET / api / v1 / countries
+- GET / api / v1 / countries / {id}
+- GET / api / v1 / distances / by points? From = {param} and to = {param}
+- GET / api / v1 / distances / per-cube? From = {param} and to = {param}
     
 
 
