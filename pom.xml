@@ -14,7 +14,7 @@
     <name>Cities API</name>
     <description>Construction of a REST API for queries from Brazilian cities</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>1.8</java.version>
     </properties>
     <dependencies>
         <dependency>
