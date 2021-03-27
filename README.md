@@ -18,14 +18,14 @@ The results of the listing are prepared for pagination, just passing the paramet
 
 Endpoints:
 
-- GET / api / v1 / states
-- GET / api / v1 / states / {id}
-- GET / api / v1 / cities
-- GET / api / v1 / cities / {id}
-- GET / api / v1 / countries
-- GET / api / v1 / countries / {id}
-- GET / api / v1 / distances / by points? From = {param} and to = {param}
-- GET / api / v1 / distances / per-cube? From = {param} and to = {param}
+- GET /api/v1/states
+- GET /api/v1/states/{id}
+- GET /api/v1/cities
+- GET /api/v1/cities/{id}
+- GET /api/v1/countries
+- GET /api/v1/countries/{id}
+- GET /api/v1/distances/bypoints?From={param}andto={param}
+- GET /api/v1/distances/per-cube?From={param}andto={param}
     
 
 
